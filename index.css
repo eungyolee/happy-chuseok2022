@@ -1,0 +1,174 @@
+@font-face {
+  font-family: "GmarketSansMedium";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Pretendard-Regular";
+  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
+    format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+
+  font-family: "Pretendard-Regular";
+}
+
+.bg {
+  width: 100%;
+  height: 100vh;
+
+  background: rgb(238, 216, 229);
+  background: linear-gradient(
+    120deg,
+    rgba(227, 226, 180, 0.642691415313225) 20%,
+    rgba(255, 255, 255, 0.877030162412993) 100%
+  );
+
+  animation-name: bg-animation;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+
+.content {
+  position: absolute;
+  font-size: 40px;
+  text-align: center;
+
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.title * {
+  animation-duration: 800ms;
+  animation-fill-mode: backwards;
+}
+
+.title h1 {
+  font-size: 2em;
+  font-weight: 700;
+
+  animation-name: show-left;
+}
+
+.title h2 {
+  font-size: 1.5em;
+  font-weight: 600;
+
+  animation-name: show-right;
+}
+
+.title .title1 {
+  animation-delay: 300ms;
+}
+
+.title .title2 {
+  animation-delay: 1000ms;
+}
+
+.title .title3 {
+  animation-delay: 1700ms;
+}
+
+.message {
+  margin-top: 20px;
+
+  animation-name: show-opacity;
+  animation-duration: 1200ms;
+  animation-delay: 2700ms;
+  animation-fill-mode: backwards;
+}
+
+.message p {
+  font-size: 0.6em;
+  font-weight: 100;
+  letter-spacing: 2px;
+}
+
+.link {
+  margin-top: 10px;
+
+  animation-name: show-opacity;
+  animation-duration: 1200ms;
+  animation-delay: 2700ms;
+  animation-fill-mode: backwards;
+}
+
+.link a {
+  text-decoration: none;
+
+  cursor: pointer;
+}
+
+.link a svg {
+  width: 32px;
+
+  fill: black;
+  stroke: black;
+}
+
+@keyframes show-left {
+  from {
+    transform: translateX(-70%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes show-right {
+  from {
+    transform: translateX(70%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes show-opacity {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 100%;
+  }
+}
+
+@keyframes bg-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@media (max-width: 500px) {
+  .title {
+    font-size: 20px;
+  }
+
+  .link a svg {
+    width: 20px;
+  }
+}
